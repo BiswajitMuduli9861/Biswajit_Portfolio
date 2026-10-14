@@ -53,7 +53,7 @@ export const About = () => {
             <span className="hero__tag">
               <span role="img" aria-label="location">📍</span> Bheteswar, Odisha
             </span>
-            <span className="hero__tag">1.7+ Yrs Experience</span>
+            <span className="hero__tag">2 Yrs Experience</span>
             <span className="hero__tag hero__tag--available">Available for Work</span>
           </div>
 
