@@ -1,0 +1,382 @@
+/* ============================================================
+   HERO SECTION
+============================================================ */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: center;
+  margin-top: 3rem;
+  padding-bottom: 1rem;
+}
+
+/* ── LEFT ─────────────────────────── */
+.hero__left {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  text-align: left;
+}
+
+/* "Hi there, I'm" */
+.hero__greeting {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--clr-primary);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.3rem;
+  animation: fadeInUp 0.6s ease both;
+}
+
+/* RANJAN PALAI */
+.hero__name {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.6rem;
+  background: linear-gradient(
+    270deg,
+    var(--clr-primary),
+    var(--clr-accent, #a855f7),
+    var(--clr-primary)
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 4s ease infinite, fadeInUp 0.7s ease both;
+}
+
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Typewriter line */
+.hero__typewriter {
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
+  font-weight: 600;
+  color: var(--clr-fg-alt);
+  min-height: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero__typewriter .Typewriter__cursor {
+  color: var(--clr-primary);
+}
+
+/* Location / status tags */
+.hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.hero__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--clr-fg);
+  background: var(--clr-bg-alt, #0d1120);
+  border: 1.5px solid var(--clr-primary);
+  border-radius: 20px;
+  padding: 4px 12px;
+  letter-spacing: 0.03em;
+  opacity: 0.9;
+}
+
+.hero__tag--available {
+  color: #10b981;
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.08);
+  animation: pulse-available 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse-available {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.25); }
+  50%       { box-shadow: 0 0 0 5px rgba(16, 185, 129, 0); }
+}
+
+/* Description */
+.hero__desc {
+  font-size: 0.97rem;
+  line-height: 1.8;
+  color: var(--clr-fg);
+  max-width: 540px;
+  margin-bottom: 1.4rem;
+}
+
+.hero__desc strong {
+  color: var(--clr-primary);
+  font-weight: 700;
+}
+
+/* ── Social icon row ─────────────────────────────────── */
+.hero__social {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.6rem;
+}
+
+/* Base icon button — compact glass pill */
+.hero__social-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1.5px solid rgba(var(--clr-primary-rgb, 15, 183, 195), 0.45);
+  color: var(--clr-fg);
+  background: rgba(var(--clr-primary-rgb, 15, 183, 195), 0.06);
+  backdrop-filter: blur(6px);
+  text-decoration: none;
+  opacity: 0;
+  animation: social-pop-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  transition: background 0.22s ease, color 0.22s ease, border-color 0.22s ease,
+    transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.22s ease;
+}
+
+@keyframes social-pop-in {
+  from { opacity: 0; transform: scale(0.6) translateY(8px); }
+  to   { opacity: 1; transform: scale(1)   translateY(0);   }
+}
+
+.hero__social-link svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ── Tooltip ── */
+.hero__social-link::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 7px);
+  left: 50%;
+  transform: translateX(-50%) translateY(3px);
+  background: var(--clr-fg-alt);
+  color: var(--clr-bg);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 3px 8px;
+  border-radius: 5px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 20;
+}
+
+.hero__social-link:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Generic hover */
+.hero__social-link:hover {
+  transform: translateY(-4px) scale(1.1);
+}
+
+.hero__social-link:hover svg {
+  transform: scale(1.12);
+}
+
+/* ── Per-brand colours ── */
+.hero__social-link--gh:hover    { background:#24292e; border-color:#24292e; color:#fff; box-shadow:0 6px 18px rgba(36,41,46,.5);     }
+.hero__social-link--li:hover    { background:#0077b5; border-color:#0077b5; color:#fff; box-shadow:0 6px 18px rgba(0,119,181,.5);    }
+.hero__social-link--email:hover { background:#ea4335; border-color:#ea4335; color:#fff; box-shadow:0 6px 18px rgba(234,67,53,.5);    }
+.hero__social-link--phone:hover { background:#10b981; border-color:#10b981; color:#fff; box-shadow:0 6px 18px rgba(16,185,129,.5);   }
+.hero__social-link--wa:hover    { background:#25d366; border-color:#25d366; color:#fff; box-shadow:0 6px 18px rgba(37,211,102,.5);   }
+.hero__social-link--ig:hover {
+  background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  border-color: #d6249f;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(214,36,159,.45);
+}
+
+/* ── Mobile ── */
+@media (max-width: 640px) {
+  .hero__social { gap: 0.4rem; }
+
+  .hero__social-link {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+  }
+
+  .hero__social-link svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Action buttons */
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+/* ── Primary filled button ── */
+.hero__btn {
+  display: inline-block;
+  padding: 0.65rem 1.8rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease,
+    color 0.2s ease;
+}
+
+.hero__btn--primary {
+  background: var(--clr-primary);
+  color: #fff;
+  border: 2px solid var(--clr-primary);
+}
+
+.hero__btn--primary:hover {
+  background: transparent;
+  color: var(--clr-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(var(--clr-primary-rgb, 15, 183, 195), 0.35);
+}
+
+.hero__btn--outline {
+  background: transparent;
+  color: var(--clr-primary);
+  border: 2px solid var(--clr-primary);
+}
+
+.hero__btn--outline:hover {
+  background: var(--clr-primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(var(--clr-primary-rgb, 15, 183, 195), 0.35);
+}
+
+/* ── RIGHT — photo ─────────────────── */
+.hero__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__photo-ring {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(
+    135deg,
+    var(--clr-primary),
+    var(--clr-accent, #a855f7),
+    var(--clr-primary)
+  );
+  background-size: 300% 300%;
+  animation: gradient-shift 4s ease infinite, hero-float 5s ease-in-out infinite;
+  box-shadow: 0 0 0 6px rgba(var(--clr-primary-rgb, 15, 183, 195), 0.12),
+    0 16px 48px rgba(var(--clr-primary-rgb, 15, 183, 195), 0.2);
+}
+
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}
+
+.hero__photo-ring img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--clr-bg);
+  display: block;
+}
+
+/* ── Keep old .about__name for anything referencing it ── */
+.about__name { color: var(--clr-primary); }
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero__left {
+    align-items: center;
+    order: 2;
+  }
+
+  .hero__right {
+    order: 1;
+  }
+
+  .hero__photo-ring {
+    width: 220px;
+    height: 220px;
+  }
+
+  .hero__meta {
+    justify-content: center;
+  }
+
+  .hero__social {
+    justify-content: center;
+  }
+
+  .hero__actions {
+    justify-content: center;
+  }
+
+  .hero__desc {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    margin-top: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .hero__photo-ring {
+    width: 170px;
+    height: 170px;
+  }
+
+  .hero__name {
+    font-size: 2rem;
+  }
+
+  .hero__typewriter {
+    font-size: 0.95rem;
+  }
+
+  .hero__btn {
+    padding: 0.55rem 1.4rem;
+    font-size: 0.84rem;
+  }
+
+  .hero__tag {
+    font-size: 0.72rem;
+    padding: 3px 10px;
+  }
+}

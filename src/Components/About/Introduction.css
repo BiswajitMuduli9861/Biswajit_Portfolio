@@ -1,0 +1,120 @@
+.introduction {
+  width: 100%;
+  display: flex;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Override .different from App.css — keep gradient */
+.introduction .different {
+  background: linear-gradient(270deg, var(--clr-primary), var(--clr-accent, #a855f7), var(--clr-primary));
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 4s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.introduction_logocontainer {
+  flex-basis: 38%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.introduction_logocontainer > img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 24px;
+  border: 2px solid var(--clr-primary);
+  box-shadow: 0 0 24px rgba(var(--clr-primary-rgb, 15, 183, 195), 0.15);
+  animation: float 5s ease-in-out infinite;
+  transition: box-shadow 0.3s ease;
+}
+
+.introduction_logocontainer > img:hover {
+  box-shadow: 0 0 36px rgba(var(--clr-primary-rgb, 15, 183, 195), 0.3);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+.introduction_datacontainer {
+  flex-basis: 62%;
+}
+
+.introduction_datacontainer > h4 {
+  font-size: 1.02em;
+  line-height: 1.75;
+  margin-top: 0.6em;
+  color: var(--clr-fg);
+}
+
+.introduction_datacontainer > h4:first-child {
+  margin-top: 0;
+}
+
+.icons {
+  position: relative;
+  top: 5px;
+  color: var(--clr-fg-alt);
+  margin-right: 0.5em;
+  transition: color 0.2s ease;
+}
+
+.introduction_datacontainer h4.different .icons {
+  color: var(--clr-primary);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .introduction {
+    flex-direction: column;
+    margin-top: 2em;
+    gap: 1.5rem;
+  }
+
+  .introduction_logocontainer {
+    flex-basis: auto;
+  }
+
+  .introduction_logocontainer > img {
+    max-width: 260px;
+    border-radius: 50%;
+  }
+
+  .introduction_datacontainer {
+    flex-basis: auto;
+    padding: 0 5%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .introduction {
+    flex-direction: column;
+  }
+
+  .introduction_logocontainer > img {
+    max-width: 200px;
+  }
+
+  .introduction_datacontainer {
+    padding: 0 2%;
+  }
+
+  .introduction_datacontainer > h4 {
+    font-size: 0.95em;
+  }
+}
