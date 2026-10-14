@@ -29,7 +29,7 @@ const workProjects = [
   description:
     "Worked with the development team on Employee 360, a comprehensive employee management platform designed to streamline HR operations and employee data management. Implemented employee profiles, department and designation management, reporting managers, and employment status tracking. Developed reusable React components, integrated REST APIs, and implemented CRUD operations, search, filtering, and pagination for managing 1,000+ employee records. Implemented role-based access control (RBAC) for Admin, HR, Manager, and Employee roles, along with Redux Toolkit for efficient state management, form validation, and error handling.",
   tech: ["React.js", "JavaScript", "Node.js", "Express.js", "MongoDB", "Redux Toolkit", "REST APIs", "RBAC", "Tailwind CSS"],
-  liveUrl: "",
+  liveUrl: "https://2025.globalfintechfest.com/",
   liveLabel: "Visit Live Site",
 },
   {
@@ -42,7 +42,7 @@ const workProjects = [
   description:
     "Worked with the development team on a comprehensive HR Management System designed to automate and streamline daily HR operations. Contributed to features including employee management, live location tracking, attendance with punch-in/punch-out, asset management, expense tracking, task management, leave management, performance tracking, and learning management. Integrated REST APIs, implemented role-based access control (RBAC), and developed responsive, reusable React components for efficient HR workflows. Also contributed to AI-powered chatbot support to improve employee assistance and reduce manual HR tasks.",
   tech: ["React.js", "JavaScript", "Node.js", "Express.js", "MongoDB", "Redux Toolkit", "REST APIs", "RBAC", "Geolocation API", "AI Chatbot", "Tailwind CSS"],
-  liveUrl: "",
+  liveUrl: "https://2025.globalfintechfest.com/",
   liveLabel: "Visit Live Site",
 },
 ];

@@ -101,9 +101,9 @@ export const Stat = () => {
 
   // static achievements
   const achievements = [
-    { value: 3,  suffix: "+", label: "Years Experience" },
-    { value: 20, suffix: "+", label: "Projects Shipped"  },
-    { value: 24, suffix: "+", label: "Technologies"      },
+    { value: 2,  suffix: "", label: "Years Experience" },
+    { value: 15, suffix: "+", label: "Projects Shipped"  },
+    { value: 20, suffix: "+", label: "Technologies"      },
     { value: 5,  suffix: "+", label: "Enterprise Clients"},
   ];
 

@@ -2,7 +2,7 @@ import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsFillPersonLinesFill } from "react-icons/bs";
-import resume from "../../assets/Ranjan-Palai-Resume.pdf";
+import resume from "../../assets/MERN Stack Developer.pdf";
 import { openNew } from "./About";
 
 const SocialLinks = () => {

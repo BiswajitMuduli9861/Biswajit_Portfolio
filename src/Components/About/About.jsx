@@ -15,7 +15,7 @@ import { Instagram as InstagramIcon, WhatsApp } from "@material-ui/icons";
 
 export const openNew = () => {
   window.open(
-    "https://drive.google.com/drive/folders/1oxWlecq-6y5MPHBA5_yasO1TbykqmbPT/"
+    "https://drive.google.com/drive/folders/1oxWlecq-6y5MPHBA5_yasO1TbykqmbPT?usp=sharing"
   );
 };
 

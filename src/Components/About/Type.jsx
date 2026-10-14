@@ -10,7 +10,6 @@ export const Type = () => {
           "Web Components Architect",
           "AI Platform Builder",
           "React & Next.js Specialist",
-          "AWS Serverless Developer",
           "Team Player & Problem Solver",
         ],
         autoStart: true,

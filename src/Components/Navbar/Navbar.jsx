@@ -19,7 +19,7 @@ export const Navbar = () => {
 
   const openResume = () => {
     window.open(
-      "https://drive.google.com/file/d/19ZZO9lSOfHjEek31QVbsEDOIEq6sUep7/view?usp=sharing"
+      "https://drive.google.com/drive/folders/1oxWlecq-6y5MPHBA5_yasO1TbykqmbPT?usp=sharing"
     );
   };
 
