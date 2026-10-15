@@ -51,7 +51,7 @@ export const About = () => {
 
           <div className="hero__meta" data-aos="fade-right" data-aos-delay="240">
             <span className="hero__tag">
-              <span role="img" aria-label="location">📍</span> Bheteswar, Odisha
+              <span role="img" aria-label="location">📍</span> Kakatpur, Odisha
             </span>
             <span className="hero__tag">2 Yrs Experience</span>
             <span className="hero__tag hero__tag--available">Available for Work</span>

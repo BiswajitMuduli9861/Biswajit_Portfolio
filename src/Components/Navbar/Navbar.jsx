@@ -3,7 +3,7 @@ import { ThemeContext } from "../../Context/theme";
 import "./Navbar.css";
 import Brightness2Icon from "@material-ui/icons/Brightness2";
 import WbSunnyRoundedIcon from "@material-ui/icons/WbSunnyRounded";
-import resume from "../../assets/Ranjan-Palai-Resume.pdf";
+import resume from "../../assets/MERN Stack Developer.pdf";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
 
